@@ -6,7 +6,7 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 
-namespace GlobalEmail_NET
+namespace GlobalIP_NET
 {
     public partial class Form1 : Form
     {
@@ -18,7 +18,6 @@ namespace GlobalEmail_NET
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             String RESTRequest = "";
-            String Options = "";
 
             // *************************************************************************************
             // Set the License String in the Request
@@ -26,29 +25,15 @@ namespace GlobalEmail_NET
             RESTRequest += @"&id=" + Uri.EscapeDataString(txtLicense.Text);
 
             // *************************************************************************************
-            // Set the Options in the Request
-            // *************************************************************************************
-            if (!optDomainCorrection.Checked)
-                Options += "DomainCorrection:False,";
-
-            if (optVerificationType.SelectedIndex.Equals(1))
-                Options += "VerifyMailbox:Premium,";
-
-            if (!optTimeToWait.SelectedIndex.Equals(1))
-                Options += "TimeToWait:" + (optTimeToWait.SelectedIndex + 1);
-
-            RESTRequest += @"&opt=" + Options;
-       
-            // *************************************************************************************
             // Set the Input Parameters
             // *************************************************************************************
-            RESTRequest += @"&email=" + Uri.EscapeDataString(txtEmailIn.Text);
+            RESTRequest += @"&ip=" + Uri.EscapeDataString(txtIPIn.Text);
 
             // Set JSON Response Protocol
             RESTRequest += @"&format=json";
 
             // Build the final REST String Query
-            RESTRequest = @"https://globalemail.melissadata.net/V3/WEB/GlobalEmail" + @"/doGlobalEmail?t=" + RESTRequest;
+            RESTRequest = @"http://globalip.melissadata.net/v4/web/iplocation" + @"/doiplocation?t=" + RESTRequest;
 
             // Output the REST Query
             txtRESTRequest.Text = RESTRequest;
@@ -92,12 +77,7 @@ namespace GlobalEmail_NET
         private void btnClear_Click(object sender, EventArgs e)
         {
             // inputs
-            txtEmailIn.Text = string.Empty;
-
-            // options
-            optDomainCorrection.Checked = true;
-            optVerificationType.SelectedIndex = 0;
-            optTimeToWait.SelectedIndex = 1;
+            txtIPIn.Text = string.Empty;
 
             // request and response
             txtRESTRequest.Text = string.Empty;
@@ -109,7 +89,7 @@ namespace GlobalEmail_NET
         // *************************************************************************************
         private void lnkWiki_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://wiki.melissadata.com/index.php?title=Global_Email");
+            Process.Start("http://wiki.melissadata.com/index.php?title=IP_Locator");
         }
     }
 }

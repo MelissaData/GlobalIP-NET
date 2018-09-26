@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GlobalEmail_NET
+namespace GlobalIP_NET
 {
     static class Program
     {
