@@ -27,6 +27,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lnkWiki = new System.Windows.Forms.LinkLabel();
+            this.isShowDomainEnabled = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.tabRequest.SuspendLayout();
             this.tabInput.SuspendLayout();
@@ -63,6 +64,7 @@
             // tabInput
             // 
             this.tabInput.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.tabInput.Controls.Add(this.isShowDomainEnabled);
             this.tabInput.Controls.Add(this.txtLicense);
             this.tabInput.Controls.Add(this.txtIPIn);
             this.tabInput.Controls.Add(this.label25);
@@ -239,6 +241,16 @@
             this.lnkWiki.Text = "Wiki Reference Guide";
             this.lnkWiki.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkWiki_LinkClicked);
             // 
+            // isShowDomainEnabled
+            // 
+            this.isShowDomainEnabled.AutoSize = true;
+            this.isShowDomainEnabled.Location = new System.Drawing.Point(18, 127);
+            this.isShowDomainEnabled.Name = "isShowDomainEnabled";
+            this.isShowDomainEnabled.Size = new System.Drawing.Size(162, 17);
+            this.isShowDomainEnabled.TabIndex = 55;
+            this.isShowDomainEnabled.Text = "Show Domain Information";
+            this.isShowDomainEnabled.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,6 +295,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox isShowDomainEnabled;
     }
 }
 

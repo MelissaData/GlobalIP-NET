@@ -29,6 +29,14 @@ namespace GlobalIP_NET
             // *************************************************************************************
             RESTRequest += @"&ip=" + Uri.EscapeDataString(txtIPIn.Text);
 
+            //Set Column parameter if checked
+
+            if (isShowDomainEnabled.Checked == true)
+            {
+                RESTRequest += @"&cols=grpdomaininfo";
+            }
+                       
+
             // Set JSON Response Protocol
             RESTRequest += @"&format=json";
 
